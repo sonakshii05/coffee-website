@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Coffee website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+     <meta name="pinterest" content="nopin">
+    <link rel="stylesheet" href= "style.css">
+</head>
+
+<body>
+    <!--header/navabar-->
+    <header>
+        <nav class="navbar section-content">
+            <a href="#" class="nav-logo">
+                <h2 class ="logo-text">🍵Cafex
+
+                </h2>
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-xmark"></button>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Menu
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Gallery
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Testimonials
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contact
+                    </a>
+                </li>
+            </ul>
+                <button id="menu-open-button"class="fas fa-bars"></button>
+
+        </nav>
+
+    </header>
+<main>
+  <!-- Hero section -->
+  <section class="hero-section">
+    <div class="section-content">
+      <div class="hero-details">
+        <h2 class="title">Best Coffee</h2>
+        <h3 class="subtitle">We just want to make your day! Smile please😊</h3>
+        <p class="description">welcome to  our coffee house where 
+            every coffee has a twist and turns and
+            every cups sparks a joy.</p>
+            <div class="buttons">
+                <a href="#" class="button order-now">Order Now</a>
+                <a href="#" class="button contact">Contact Us</a>
+                
+            </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img src="coffee-hero-section.png"alt="hero"class="hero-image">
+
+      </div>
+      </div>
+    </div>
+    
+  
+</div>
+  </section>
+  <!--about section-->
+   <section class="about-section" aria-labelledby="about-title">
+  <div class="section-content">
+    <div class="about-text">
+      <h2 id="about-title" class="section-title">🍥 About Cafex</h2>
+      <p>
+        Welcome to Cafex — your cozy anime café corner.  
+        Think of us as the café you’d stumble upon in your favorite slice-of-life show:  
+        soft chatter, warm lights, and coffee so good it feels like magic.
+      </p>
+      <p>
+        Here, every latte swirl tells a story, and every bean has its own little smile .  
+        Whether you’re a dreamer, an otaku, or just craving sweetness or a Naruto fan,  
+        our café doors are always open for you.
+      </p>
+      <p>
+  Here, every latte swirl tells a  
+  and every bean has its own little smile ☕✨.
+</p>
+
+
+      <!-- Social links -->
+<div class="social-section">
+  <h6 class="follow">Follow us to know more 😁</h6>
+  <div class="social-link-list">
+    <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+  </div>
+</div>
+
+
+
+      <a href="menu.html" class="button about-btn">🌸 Explore Our Menu</a>
+    </div>
+
+    <div class="about-image-wrapper">
+      <img src="cafe-anime-88uth4r3lf5591eb.jpg" alt="Cartoon Coffee Cup">
+    </div>
+  </div>
+
+  <div class="floating-doodle donut">
+  <img src="doughnut.png" alt="Kawaii Donut">
+</div>
+<div class="floating-doodle cupcake">
+  <img src="cupcake.png" alt="Kawaii Cupcake">
+</div>
+<div class="floating-doodle dream">
+  <img src="dream.png" alt="Kawaii Dream">
+</div>
+<!-- Sakura Petals Container -->
+
+
+
+
+
+  <!-- Cute floating beans / doodles -->
+  <div class="floating-doodle bean" aria-hidden="true">🍪</div>
+  <div class="floating-doodle star" aria-hidden="true">✨</div>
+  <div class="floating-doodle cup" aria-hidden="true">☕</div>
+  
+</section>
+<!--menu section-->
+<section class="menu-section">
+
+  <div class="section-content">
+    <h2 id="menu-list" class="delicious">🍥 Anime Café Menu</h2>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <div class="tab active" onclick="showMenu('human')">👩  Menu</div>
+      <div class="tab" onclick="showMenu('fan')">✨ anime Specials</div>
+    </div>
+
+    <!-- Human Menu -->
+    <div id="human" class="menu-items active">
+
+      <h3 class="category">☕ Hot Beverages</h3>
+      <div class="card">
+        <img src="hot-beverages.png" alt="Cappuccino">
+        <h3>Cappuccino <span class="badge">⭐ Bestseller</span></h3>
+        <p>₹249 / $3.00</p>
+        <p class="text">A cup of cappuccino to brighten your day ☀️</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="card">
+        <img src="chai.png" alt="Masala Chai">
+        <h3>Masala Chai</h3>
+        <p>₹40 / $0.50</p>
+        <p class="text">India’s soul in a cup 🍵</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <h3 class="category">🍔 Quick Bites</h3>
+      <div class="card">
+        <img src="burger-frenchfries.png" alt="Burger & Fries">
+        <h3>Burger & Fries</h3>
+        <p>₹450 / $5.50</p>
+        <p class="text">Cheat day vibes 🍔🍟</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="card">
+        <img src="samosa.png" alt="Samosa">
+        <h3>Samosa</h3>
+        <p>₹30 / $0.40</p>
+        <p class="text">Crispy golden triangle of happiness 😋</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <h3 class="category">🍰 Desserts</h3>
+      <div class="card">
+        <img src="OIP.webp" alt="Chocolate Strawberry Mousse">
+        <h3>Chocolate Strawberry Mousse <span class="badge new">🆕 New</span></h3>
+        <p>₹699 / $8.50</p>
+        <p class="text">Strawberries + chocolate = forever love 💕</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <h3 class="category">🥤 Refreshers</h3>
+      <div class="card">
+        <img src="cold-beverages.png" alt="Cold Coffee">
+        <h3>Cold Coffee</h3>
+        <p>₹349 / $4.50</p>
+        <p class="text">One sip and worries fade away 😮‍💨</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="card">
+        <img src="refreshment.png" alt="Mojito">
+        <h3>Mojito</h3>
+        <p>₹180 / $2.20</p>
+        <p class="text">Refreshing & cool ✨</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+     <!-- Fan Menu (Anime/Cartoon Style) -->
+    <div id="fan" class="menu-items">
+      <h3 class="category">⚡ Anime Specials</h3>
+      <div class="card">
+        <img src="pikachu-lattee.png" alt="Pikachu Latte">
+        <h3>Pikachu Latte</h3>
+        <p>₹299 / $3.70</p>
+        <p class="text">Electrifyingly cute & creamy ⚡</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="card">
+        <img src="ramen.png" alt="Sharingan Ramen">
+        <h3>Sharingan Ramen</h3>
+        <p>₹499 / $6.00</p>
+        <p class="text">A Naruto-approved bowl 🍜</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="card">
+    <img src="doracake.jpg" alt="doreamon's favourite">
+    <h3>Doreamons favourite ⚡</h3>
+    <p>₹399 / $4.80</p>
+    <p class="text">A power-up in every bite.</p>
+    <button>Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="bento-box-kawaii-bentobox.png" alt="all in one">
+    <h3> Bento-box 🍖</h3>
+    <p>₹599 / $7.50</p>
+    <p class="text">All-you-can-eat vibes, straight from One Piece.</p>
+    <button>Add to Cart</button>
+  </div>
+  <div class="card">
+    <img src="demon-slayer-onigiri.png" alt="Demon Slayer Onigiri">
+    <h3>Demon Slayer Onigiri 🍙</h3>
+    <p>₹299 / $3.50</p>
+    <p class="text">Simple, powerful, and Nezuko-approved.</p>
+    <button>Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="deathnote-coffee.png" alt="Death Note Black Coffee">
+    <h3>Death Note Black Coffee ☕</h3>
+    <p>₹249 / $3.00</p>
+    <p class="text">Strong enough to keep you awake like L.</p>
+    <button>Add to Cart</button>
+  </div>
+
+      <div class="card">
+        <img src="totoro-pancakes.png" alt="Totoro Pancakes">
+        <h3>Totoro Pancakes</h3>
+        <p>₹350 / $4.20</p>
+        <p class="text">Fluffy, cute, and wholesome 🐾</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+<section class="gallery-section">
+  <h2 class="gallery-title">Our Gallery</h2>
+
+  <!-- Row 1 -->
+  <div class="gallery-row">
+    <div class="gallery-item"><img src="gallery-1.jpg" alt="Photo 1"></div>
+    <div class="gallery-item"><img src="gallery-2.jpg" alt="Photo 2"></div>
+    <div class="gallery-item"><img src="gallery-3.jpg" alt="Photo 3"></div>
+   
+  </div>
+
+  <!-- Row 2 -->
+  <div class="gallery-row">
+    <div class="gallery-item"><img src="gallery-6.jpg" alt="Photo 6"></div>
+    <div class="gallery-item"><img src="gallery-5.jpg" alt="Photo 7"></div>
+    <div class="gallery-item"><img src="gallery-4.jpg" alt="Photo 8"></div>
+  
+  </div>
+</section>
+
+
+</main>
+<script src="script.js"></script>
+</body>
+</html>
