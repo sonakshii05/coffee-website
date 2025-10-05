@@ -707,6 +707,120 @@ header .navbar{
   cursor: pointer;
   margin-left: auto; /* pushes it to the right */
 }
+/* =====================
+   Testimonials Section
+===================== */
+.testimonials-section {
+  background: #fff8fb;
+  padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-section .section-title {
+  color: #ff85a2;
+  text-transform: none;
+  font-family: "Miniver", poppins;
+  font-size: 2rem;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+/* Floating emojis behind */
+.testimonials-section::before {
+  content: "🍰 🌸 ☕ 💫 🍙 ⚡";
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.08;
+  width: 100%;
+  text-align: center;
+  top: 30px;
+  animation: doodleFloat 6s infinite ease-in-out alternate;
+}
+
+@keyframes doodleFloat {
+  from { transform: translateY(0); }
+  to { transform: translateY(10px); }
+}
+
+/* =====================
+   Cards Container
+===================== */
+.testimonials-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start; /* aligns cards at the top */
+  gap: 25px;
+}
+
+/* =====================
+   Testimonial Card
+===================== */
+.testimonial-card {
+  background: #ffe6ef;
+  border-radius: 20px;
+  width: 270px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(255, 133, 162, 0.25);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 250px; /* makes all cards roughly same height */
+  position: relative;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(255, 133, 162, 0.5);
+}
+
+/* Character Image */
+.testimonial-card img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Testimonial Message */
+.testimonial-card .message {
+  font-family: "Comic Neue", cursive;
+  font-size: 1rem;
+  color: #5a2a2a;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Character Name */
+.testimonial-card h4 {
+  font-size: 0.95rem;
+  color: #ff5c8a;
+  font-weight: 600;
+  margin-top: auto; /* pushes name to bottom for balance */
+}
+
+/* =====================
+   Responsive
+===================== */
+@media (max-width: 1024px) {
+  .testimonial-card {
+    width: 45%; /* 2 cards per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    width: 100%;
+    max-width: 320px;
+    min-height: auto; /* lets cards shrink naturally on small screens */
+  }
+}
 
 /* Mobile Fix */
 @media (max-width: 768px) {
