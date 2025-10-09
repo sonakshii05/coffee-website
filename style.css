@@ -1,12 +1,18 @@
 /* importing google fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 
-font-family: "Poppins", sans-serif;
+* {
+  box-sizing: border-box;
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* stops any sideways scroll */
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
 :root{
     /*colors*/
     
@@ -710,20 +716,23 @@ header .navbar{
 /* =====================
    Testimonials Section
 ===================== */
+/* =====================
+   Testimonials Section
+===================== */
 .testimonials-section {
   background: #fff8fb;
-  padding: 100px 20px;
+  padding: 60px 20px 100px; /* responsive padding */
   position: relative;
   overflow: hidden;
 }
 
+/* Section Title */
 .testimonials-section .section-title {
   color: #ff85a2;
-  text-transform: none;
   font-family: "Miniver", poppins;
   font-size: 2rem;
-  margin-bottom: 60px;
   text-align: center;
+  margin-bottom: 50px;
 }
 
 /* Floating emojis behind */
@@ -739,19 +748,19 @@ header .navbar{
 }
 
 @keyframes doodleFloat {
-  from { transform: translateY(0); }
-  to { transform: translateY(10px); }
+  from { transform: translateY(0) translateX(0); }
+  to { transform: translateY(10px) translateX(5px); } /* subtle diagonal float */
 }
 
 /* =====================
-   Cards Container
+   Testimonials Container
 ===================== */
 .testimonials-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start; /* aligns cards at the top */
   gap: 25px;
+  align-items: flex-start;
 }
 
 /* =====================
@@ -760,15 +769,15 @@ header .navbar{
 .testimonial-card {
   background: #ffe6ef;
   border-radius: 20px;
-  width: 270px;
+  width: 270px; /* default width */
   padding: 20px;
   box-shadow: 0 5px 15px rgba(255, 133, 162, 0.25);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 250px; /* makes all cards roughly same height */
+  text-align: center;
+  min-height: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
 }
 
@@ -777,7 +786,7 @@ header .navbar{
   box-shadow: 0 10px 25px rgba(255, 133, 162, 0.5);
 }
 
-/* Character Image */
+/* Avatar Image */
 .testimonial-card img {
   width: 85px;
   height: 85px;
@@ -793,8 +802,8 @@ header .navbar{
   font-family: "Comic Neue", cursive;
   font-size: 1rem;
   color: #5a2a2a;
-  margin-bottom: 10px;
   line-height: 1.5;
+  margin-bottom: 15px;
 }
 
 /* Character Name */
@@ -802,23 +811,56 @@ header .navbar{
   font-size: 0.95rem;
   color: #ff5c8a;
   font-weight: 600;
-  margin-top: auto; /* pushes name to bottom for balance */
+  margin-top: auto; /* pushes name to bottom */
 }
 
 /* =====================
-   Responsive
+   Responsive Adjustments
 ===================== */
+@media (max-width: 1200px) {
+  .testimonial-card {
+    width: 220px; /* slightly smaller for small laptops */
+  }
+}
+
 @media (max-width: 1024px) {
   .testimonial-card {
-    width: 45%; /* 2 cards per row on medium screens */
+    width: 45%; /* 2 cards per row for tablets */
   }
 }
 
 @media (max-width: 768px) {
+  .testimonials-section {
+    padding: 40px 15px 60px;
+  }
   .testimonial-card {
-    width: 100%;
+    width: 100%;  /* full-width for mobile */
     max-width: 320px;
-    min-height: auto; /* lets cards shrink naturally on small screens */
+    min-height: auto;
+    padding: 15px;
+  }
+  .testimonial-card .message {
+    font-size: 0.95rem;
+  }
+  .testimonials-section .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+}
+
+/* Optional: very small screens */
+@media (max-width: 480px) {
+  .testimonial-card {
+    padding: 12px;
+  }
+  .testimonial-card .message {
+    font-size: 0.9rem;
+  }
+  .testimonial-card h4 {
+    font-size: 0.85rem;
+  }
+  .testimonials-section .section-title {
+    font-size: 1.5rem;
   }
 }
 
