@@ -1,12 +1,10 @@
 name: Deploy to GitHub Pages
 
-# Trigger deployment on push to main branch
 on:
   push:
     branches:
       - main
 
-# Give GitHub Actions proper permissions
 permissions:
   contents: read
   id-token: write
@@ -16,10 +14,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repo
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      # Step 1: Upload your site as an artifact
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: '.'  # Upload the whole repository; adjust if your site files are in a subfolder
 
       # Step 2: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
+
