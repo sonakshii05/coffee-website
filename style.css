@@ -719,150 +719,107 @@ header .navbar{
 /* =====================
    Testimonials Section
 ===================== */
+
+
+/* Container for the section */
 .testimonials-section {
   background: #fff8fb;
-  padding: 60px 20px 100px; /* responsive padding */
-  position: relative;
-  overflow: hidden;
+  padding: 50px 20px 100px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
 }
 
-/* Section Title */
+/* Section title */
 .testimonials-section .section-title {
-  color: #ff85a2;
-  font-family: "Miniver", poppins;
   font-size: 2rem;
-  text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+  color: #333;
 }
 
-/* Floating emojis behind */
-.testimonials-section::before {
-  content: "🍰 🌸 ☕ 💫 🍙 ⚡";
-  position: absolute;
-  font-size: 2.5rem;
-  opacity: 0.08;
-  width: 100%;
-  text-align: center;
-  top: 30px;
-  animation: doodleFloat 6s infinite ease-in-out alternate;
-}
-
-@keyframes doodleFloat {
-  from { transform: translateY(0) translateX(0); }
-  to { transform: translateY(10px) translateX(5px); } /* subtle diagonal float */
-}
-
-/* =====================
-   Testimonials Container
-===================== */
-.testimonials-container {
+/* Slider wrapper */
+.slider-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  align-items: flex-start;
+  overflow-x: auto; /* horizontal scroll on smaller screens */
+  gap: 30px;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+.slider-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+.slider-wrapper::-webkit-scrollbar-thumb {
+  background: #ffd6e0;
+  border-radius: 10px;
+}
+.slider-wrapper::-webkit-scrollbar-track {
+  background: #fff8fb;
 }
 
-/* =====================
-   Testimonial Card
-===================== */
+/* Remove default list styles */
+.testimonials-list {
+  display: flex;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Each testimonial card container */
 .testimonial-card {
-  background: #ffe6ef;
-  border-radius: 20px;
-  width: 270px; /* default width */
-  padding: 20px;
-  box-shadow: 0 5px 15px rgba(255, 133, 162, 0.25);
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  flex: 0 0 250px; /* width of each card */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
   text-align: center;
-  min-height: 250px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
+  transition: transform 0.3s ease;
 }
 
+/* Hover effect */
 .testimonial-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(255, 133, 162, 0.5);
+  transform: translateY(-5px);
 }
 
-/* Avatar Image */
-.testimonial-card img {
-  width: 85px;
-  height: 85px;
-  border-radius: 50%;
+/* User image */
+.user-image {
+  width: 80px;
+  height: 80px;
   object-fit: cover;
-  border: 4px solid #fff;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* Testimonial Message */
-.testimonial-card .message {
-  font-family: "Comic Neue", cursive;
-  font-size: 1rem;
-  color: #5a2a2a;
-  line-height: 1.5;
+  border-radius: 50%;
   margin-bottom: 15px;
+  border: 3px solid #ffd6e0;
 }
 
-/* Character Name */
+/* Message / feedback */
+.message {
+  font-style: italic;
+  color: #555;
+  margin: 10px 0;
+}
+
+/* User name */
 .testimonial-card h4 {
-  font-size: 0.95rem;
-  color: #ff5c8a;
-  font-weight: 600;
-  margin-top: auto; /* pushes name to bottom */
+  margin: 5px 0 0;
+  color: #222;
+  font-size: 1.1rem;
 }
 
-/* =====================
-   Responsive Adjustments
-===================== */
-@media (max-width: 1200px) {
-  .testimonial-card {
-    width: 220px; /* slightly smaller for small laptops */
-  }
-}
-
-@media (max-width: 1024px) {
-  .testimonial-card {
-    width: 45%; /* 2 cards per row for tablets */
-  }
-}
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .testimonials-section {
-    padding: 40px 15px 60px;
-  }
   .testimonial-card {
-    width: 100%;  /* full-width for mobile */
-    max-width: 320px;
-    min-height: auto;
-    padding: 15px;
-  }
-  .testimonial-card .message {
-    font-size: 0.95rem;
-  }
-  .testimonials-section .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 40px;
+    flex: 0 0 70%;
   }
 }
 
-/* Optional: very small screens */
 @media (max-width: 480px) {
   .testimonial-card {
-    padding: 12px;
-  }
-  .testimonial-card .message {
-    font-size: 0.9rem;
-  }
-  .testimonial-card h4 {
-    font-size: 0.85rem;
-  }
-  .testimonials-section .section-title {
-    font-size: 1.5rem;
+    flex: 0 0 90%;
   }
 }
+
 
 /* Mobile Fix */
 @media (max-width: 768px) {
