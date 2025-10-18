@@ -14,7 +14,7 @@ html, body {
 }
 
 :root{
-    /*colors*/
+    
     
 
     /* Colors */
@@ -47,7 +47,8 @@ html, body {
     /* Site max width */
     --site-max-width: 1300px;
 }
-/*styling of whole site*/
+/* Styling of whole site */
+
 ul{
     list-style: none;
 }
@@ -86,7 +87,8 @@ img{
 
 }
 
-/*navbar settings*/
+/* navbar settings */
+
 header{
       background:var(--primary-color) ;
       position: fixed;
@@ -230,7 +232,8 @@ header .navbar{
   display: flex;
   gap: 10px;
 }
-/*about section styling*/
+
+/* about ssection */
 
 .about-section {
   padding: 120px 0;
@@ -622,13 +625,13 @@ header .navbar{
   }
 
   /* When menu is open */
-  body.show-mobile-menu #menu-close-button {
+  .body.show-mobile-menu #menu-close-button {
     display: block;  /* cross appears */
   }
-  body.show-mobile-menu #menu-open-button {
+  .body.show-mobile-menu #menu-open-button {
     display: none;  /* hide hamburger */
   }
-  body.show-mobile-menu header::before{
+  .body.show-mobile-menu header::before{
     content:"";
     position: fixed;
     left:0;
@@ -663,7 +666,7 @@ header .navbar{
   color: var(--white-color);
 }
   /* Slide menu in */
-  body.show-mobile-menu .navbar .nav-menu {
+  .body.show-mobile-menu .navbar .nav-menu {
     left: 0;
   }
 
@@ -830,4 +833,46 @@ header .navbar{
   }
 }
 
+}
+
+
+.card-container{
+  display: flex;
+}
+
+.card-containerTest{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.testimonial-card{
+  height: 400px;
+  width: 22%;
+  margin: 0.8rem;
+  padding: 5px;
+  background-color: #fff;
+  border-radius:15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card img{
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 100%;
+  text-align: center; 
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.section-titleTest{
+  text-align: center;
+  padding:30px 0 10px;
+  text-transform: uppercase;
+  font-size: var(--font-size-xl) ;
 }
