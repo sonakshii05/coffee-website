@@ -107,7 +107,8 @@ header .navbar{
 .navbar .nav-logo .logo-text{
     color: var(--white-color);
     font-size: var(--font-size-xl);
-    font-weight: var(font --font-weight-semibold);
+   font-weight: var(--font-weight-semibold);
+
 }
 .navbar .nav-menu{
     display: flex;
@@ -129,6 +130,14 @@ header .navbar{
 .navbar :where(#menu-close-button,#menu-open-button){
     display: none;
 }
+/* Hide both buttons on desktop */
+@media (min-width: 993px) {
+  #menu-open-button,
+  #menu-close-button {
+    display: none !important;
+  }
+}
+
 .hero-section{
     min-height: 100vh;
     background-color:var(--primary-color)
@@ -151,7 +160,8 @@ header .navbar{
     margin-top: 8px;
     max-width: 80%;
     font-size: var(--font-size-xl);
-    font-weight: var(font --font-weight-semibold);
+   font-weight: var(--font-weight-semibold);
+
     color: antiquewhite;
 
 }
@@ -226,13 +236,45 @@ header .navbar{
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-20px); }
 }
-
 /* Default (desktop) */
 .navbar .nav-menu {
   display: flex;
   gap: 10px;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 80px 20px;
+  }
+
+  .hero img {
+    width: 80%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 60px 10px;
+  }
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+}
 /* about ssection */
 
 .about-section {
@@ -413,6 +455,36 @@ header .navbar{
   0%   { opacity: 0.3; transform: scale(1); }
   50%  { opacity: 0.7; transform: scale(1.1); }
   100% { opacity: 0.4; transform: scale(1); }
+}
+
+@media (max-width: 900px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .about .image {
+    order: -1; /* show image above text */
+  }
+
+  .about .image img {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .about .content p {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .about .content h2 {
+    font-size: 1.5rem;
+  }
+  .about .content p {
+    font-size: 0.95rem;
+  }
 }
 /*menuitem*/
 .menu-items{
@@ -847,9 +919,9 @@ header .navbar{
 
 /* User Image */
 .user-image {
-  width: 110px;
-  height: 110px;
-  object-fit: cover;
+  width: 170px;
+  height: 170px;
+  object-fit:inherit;
   border-radius: 50%;
   border: 4px solid #ffd6e0;
   margin-bottom: 15px;
@@ -876,6 +948,10 @@ header .navbar{
 
 
 /* 🌸 Contact Section */
+.contact {
+  text-align: center;
+  padding: 80px 5%;
+}
 .contact-section{
   background:var(--light-pink-color);
   padding:60px 20px;
@@ -980,7 +1056,7 @@ header .navbar{
   transform: translateY(-3px);
 }
 
-/* Floating Sparkles */
+
 
 
 /* Responsive */
@@ -1018,4 +1094,293 @@ header .navbar{
 @keyframes fall {
   0% { transform: translateY(0) rotate(0deg); opacity: 1; }
   100% { transform: translateY(800px) rotate(360deg); opacity: 0; }
+}
+
+/* Floating emoji when adding to cart */
+.floating-emoji {
+  position: absolute;
+  font-size: 2rem;
+  animation: floatUp 1s ease-out forwards;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-80px);
+    opacity: 0;
+  }
+}
+
+
+/* Sakura petals */
+.petal {
+  position: fixed;
+  top: -20px;
+  z-index: 100;
+  font-size: 1.2rem;
+  animation: fall linear infinite;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* 🌸 Mobile Responsive Fixes for Hero & About Section */
+@media (max-width: 768px) {
+
+  /* HERO SECTION FIXES */
+  .hero {
+    flex-direction: column; /* stack image and text vertically */
+    text-align: center;
+    padding: 80px 20px;
+    gap: 2rem;
+  }
+
+  .hero img {
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+
+  .hero-content .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin-top: 15px;
+  }
+
+  /* ABOUT SECTION FIXES */
+  .about {
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .about .image {
+    order: -1; /* Show image first */
+  }
+
+  .about .image img {
+    width: 85%;
+    max-width: 250px;
+    margin: 0 auto;
+    border-radius: 20px;
+  }
+
+  .about .content {
+    width: 100%;
+  }
+
+  .about .content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .about .content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #8a4d53;
+  }
+
+  /* Fix text spacing on small screens */
+  .about .content .donut, 
+  .about .content .cupcake {
+    display: none; /* hide floating emoji if they overlap */
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .about .content h2 {
+    font-size: 1.5rem;
+  }
+
+  .about .content p {
+    font-size: 0.9rem;
+  }
+}
+/* ========== 🌸 GLOBAL RESPONSIVE FIXES 🌸 ========== */
+
+/* Reset margins on very small screens */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make sections breathe properly */
+section {
+  padding: 60px 5%;
+}
+
+/* Fix text scaling globally */
+html {
+  font-size: 100%;
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 85%;
+  }
+}
+
+
+/* Mobile styles */
+@media screen and (max-width:900px) {
+  /* Show hamburger by default */
+  #menu-open-button {
+    display: block;
+    color: var(--white-color, #fff); /* visible on header background */
+    position: relative; 
+    z-index: 2001;
+  }
+
+  /* Close button hidden initially */
+  #menu-close-button {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    font-size: 28px;
+    color: var(--primary-color, #3b141c); /* visible on white slide menu */
+    
+    z-index: 2001;
+  }
+
+  /* When menu is open */
+  body.show-mobile-menu #menu-close-button {
+    display: block;  /* cross appears */
+  }
+  body.show-mobile-menu #menu-open-button {
+    display: none;  /* hide hamburger */
+  }
+  body.show-mobile-menu header::before{
+    content:"";
+    position: fixed;
+    left:0;
+    top:0;
+    height: 100%;
+    width:100%;
+    backdrop-filter: blur(5px);
+    background:rgba(0,0,0,0.2);
+  }
+
+  /* Mobile menu layout */
+  .navbar .nav-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    padding-top: 100px;
+    background-color: var(--light-pink-color);
+    transition: left 0.3s ease;
+    z-index: 2000;
+  }
+  .navbar .nav-menu .nav-link {
+  color: var(--dark-color);
+  display:block;
+  font-size: 1.3rem;
+  margin-top: 17px;
+}
+.navbar .nav-menu .nav-link:hover {
+  color: var(--white-color);
+}
+  /* Slide menu in */
+  body.show-mobile-menu .navbar .nav-menu {
+    left: 0;
+  }
+
+  .hero-section .section-content {
+    gap: 50px;
+    text-align: center;
+    padding: 30px 20px;
+    flex-direction: column-reverse; /* image goes below text */
+    justify-content: center;
+  }
+  .hero-section .hero-details .subtitle,
+  .hero-section .hero-details .description {
+    max-width: 100%; /* don’t cut text on small screens */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-section.hero-details .buttons{
+    justify-content: center;
+  
+    
+    flex-wrap: wrap; /* 🔴 ADD to avoid overflow */
+
+  }
+  /* 🔴 ADD */
+/* 🔴 ADD inside mobile query */
+.navbar .cart-btn {
+  margin-left: 50px;         /* reset auto */
+  margin-top: 50px;       /* space below links */
+  align-self: center;     /* center it horizontally */
+}
+
+
+  
+
+  .hero-section .hero-image-wrapper {
+    max-width: 270px;
+    margin: 0 auto; /* center the image */
+  }
+
+.cart-btn {
+  background: #ff85a2;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: auto; /* pushes it to the right */
+}
 }
